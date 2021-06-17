@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <title>Рецепты</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Рецепты</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Рецепт для {{ ingredient }}</h6>
+            <ul>
+                {% for ingredient, amount in recipe.items %}
+                    <li>{{ ingredient }}: {{ amount }}</li>
+                {% endfor %}
+            </ul>
+            <p>По умолчанию сервис сообщает количество ингредиентов на 1 порцию.</p>
+            <p>Но если передать опциональный параметр servings (целое положительное число), то сервис должен выдать количество ингрелиентов на указанное число порций.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
